@@ -44,5 +44,28 @@ Implement `car` and `cdr`.
 
 &nbsp;
 
-* There is probably a follow question on this about function programming
-* Interesting question
+* There is probably a follow question on this about function programming.
+* Interesting question.
+* I think the point is to see if they know FP and that python support lambda function 👍
+
+### Anonymous function(lambda)
+
+In general, **anonymous function** is a function that is defined without a name.
+
+In Python, normal functions are defined using the **`def`** keyword; anonymous functions are defined using the **`lambda`** keyword.
+
+**Python lambda syntax**
+```python
+lambda arguments: expression
+```
+
+**Example**
+```python
+my_list = [1, 2, 3, 4, 5, 6, 8, 11, 12]
+
+even = filter(lambda x: x % 2 == 0, my_list)
+# even: [2, 4, 6, 8, 12]
+
+double = map(lambda x: x * 2, my_list)
+# double: [2, 4, 6, 8, 10, 12, 16, 22, 24]
+```
