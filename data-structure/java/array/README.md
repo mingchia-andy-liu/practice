@@ -346,9 +346,55 @@ public int pivotIndex(int[] arr, int index) {
   swap(arr, 0, size - 1);
   return size;
 }
+```
 
+Example
+
+```java
 int[] A = {-5, 2, 9, -4, 7, 19, -8, 11, 4, 6, 9};
 int pivotIndex = pivot(A, 0);
 // A -> [-5, -4, -8, 2, 7, 19, 9, 11, 4, 6, 9]
 // pivotIndex -> 3, A[pivotIndex] = 2
+```
+
+
+### Merge
+
+Useful for merge sort
+
+```java
+public int[] merge(int[] a, int[] b) {
+  int[] res = new int[a.length + b.length];
+
+  int aIdx = 0;
+  int bIdx = 0;
+
+  int curr = 0;
+  while (aIdx < a.length && bIdx < b.length) {
+    if (a[aIdx] < b[bIdx]) {
+      res[curr++] = a[aIdx++];
+    } else {
+      res[curr++] = b[bIdx++];
+    }
+  }
+  while (aIdx < a.length) {
+      res[curr++] = a[aIdx++];
+  }
+  while (bIdx < b.length) {
+      res[curr++] = b[bIdx++];
+  }
+
+  return res;
+}
+```
+
+Example
+
+```java
+int[] A = {-10,-1,0,1,1,1,5,6,12,30};
+int[] B = {-50,-23,-10,-2,0,0,5,7,9};
+int[] C = merge(A, B);
+
+// [ -50, -23, -10, -10, -2, -1, 0, 0, 0, 1, 1, 1, 5, 5, 6, 7, 9, 12, 30 ]
+System.out.println(Arrays.toString(C));
 ```
